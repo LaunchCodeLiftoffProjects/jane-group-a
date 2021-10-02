@@ -140,107 +140,6 @@ container-fluid {
     </div>
 
 </div>
-
-<div class="container-fluid p-3 my-3 font-weight-bold">
-    <h1 class="display-2 font-weight-bold">My Kitchen </h1>
-    <div class="row">
-
-        <div class="col-lg-2 border font-weight-bold bg-white text-center">
-            <label class="font-weight-bold">Spices</label>
-            <div class="row">
-                <div class="col border bg-white text-center">
-                    <ul>
-                        <li th:each="spice : ${spices}">
-                            <p th:text="${spice.ingredientName}">spice name</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 border bg-white text-center">
-            <label class="font-weight-bold">Proteins</label>
-            <div class="row" >
-                <div class="col border bg-white text-center">
-                    <ul>
-                        <li th:each="protein : ${proteins}">
-                            <p th:text="${protein.ingredientName}">protein name</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 border bg-white text-center">
-            <label class="font-weight-bold">Sides</label>
-            <div class="row" >
-                <div class="col border bg-white text-center">
-                    <ul>
-                        <li th:each="side : ${sides}">
-                            <p th:text="${side.ingredientName}">side name</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 border bg-white text-center">
-            <label class="font-weight-bold">Condiments</label>
-            <div class="row" >
-                <div class="col border bg-white text-center">
-                    <ul>
-                        <li th:each="condiment : ${condiments}">
-                            <p th:text="${condiment.ingredientName}">condiment name</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-2 border bg-white text-center">
-            <label class="font-weight-bold bg-white text-center">Other</label>
-            <div class="row" >
-                <div class="col border bg-white">
-                    <ul>
-                        <li th:each="other : ${other}">
-                            <p th:text="${other.ingredientName}">other name</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-4 pt-3">
-            <form id="addIngredient" method="post"><p class="font-weight-bold display-6">Add Ingredient</p>
-                <script>
-                    let clearForm = ()=>{
-                        document.getElementById('ingredientName').value='';
-                        document.getElementById('ingredientCategory').value='';
-                        document.getElementById('purchaseDate').value='';
-                    }
-                </script>
-                <label>Ingredient Name:  </label>
-                <input id="ingredientName" name="ingredientName" th:field="${ingredient.ingredientName}" required>
-
-                <label>Ingredient Category:  </label>
-                <select id="ingredientCategory" type="text" name="ingredientCategory" th:field="${ingredient.ingredientCategory}" required>
-                    <option value="spice">Spice</option>
-                    <option value="protein">Protein</option>
-                    <option value="side">Side</option>
-                    <option value="condiment">Condiment</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <label>Purchase Date:  </label>
-                <input id="purchaseDate" type="date" name="purchaseDate" th:field="${ingredient.purchaseDate}">
-
-                <p><input type="submit" class="btn btn-success" value="Add ingredient"></p>
-
-            </form>
-        <p><input onclick="clearForm()" type="button" class="btn btn-success" value="Clear form"></p>
-
-        </div>
         <style>
         body {
             background-image: url("/images/vegetables.jpg");
@@ -250,8 +149,6 @@ container-fluid {
         }
         </style>
 
-
     </div>
-</div>
 </body>
 </html>
